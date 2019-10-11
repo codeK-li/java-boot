@@ -10,12 +10,9 @@
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>javaboot-dependencies</artifactId>
-  <version>${revision}</version>
   <packaging>pom</packaging>
 
   <properties>
-    <main.basedir>${basedir}/../..</main.basedir>
-
     <lombok.version>1.18.10</lombok.version>
     <guava.version>28.1-jre</guava.version>
 
