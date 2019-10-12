@@ -16,6 +16,7 @@
     <module>javaboot-dependencies</module>
     <module>javaboot-parent</module>
     <module>spring-javaboot-parent</module>
+    <module>springboot-starters</module>
   </modules>
 
 </project>
