@@ -19,6 +19,7 @@ class PagingRequestTest {
     assertThat(request.getPageIndex()).isEqualTo(pageIndex);
     assertThat(request.getPageNumber()).isEqualTo(pageIndex + 1);
     assertThat(request.getParameter()).isEqualTo(parameter);
+    assertThat(request.isCountable()).isTrue();
     assertThat(request.getPagingStartIndex()).isEqualTo(pageIndex * pageSize);
     assertThat(request.getPagingEndIndex()).isEqualTo((pageIndex + 1) * pageSize);
   }
@@ -31,8 +32,10 @@ class PagingRequestTest {
     PagingRequest request = new PagingRequest();
     request.setPageSize(pageSize);
     request.setPageIndex(pageIndex);
+    request.setCountable(false);
 
     assertThat(request.getPageSize()).isEqualTo(0);
     assertThat(request.getPageIndex()).isEqualTo(0);
+    assertThat(request.isCountable()).isFalse();
   }
 }

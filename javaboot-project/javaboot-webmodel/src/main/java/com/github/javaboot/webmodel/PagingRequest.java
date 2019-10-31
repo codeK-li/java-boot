@@ -17,6 +17,8 @@ public class PagingRequest<T> {
   @Getter private long pageIndex;
   /** 查询参数 */
   @Setter @Getter private T parameter;
+  /** 是否查询记录总数 */
+  @Setter @Getter private boolean countable = true;
 
   public void setPageSize(int pageSize) {
     this.pageSize = pageSize < 0 ? 0 : pageSize;
