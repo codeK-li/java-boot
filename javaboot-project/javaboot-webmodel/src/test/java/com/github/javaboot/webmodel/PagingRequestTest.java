@@ -1,5 +1,6 @@
 package com.github.javaboot.webmodel;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -25,17 +26,27 @@ class PagingRequestTest {
   }
 
   @Test
-  void should_return_protect_pageIndex_and_pageSize() {
-    final int pageSize = -1;
-    final long pageIndex = -2;
+  void should_throws_IllegalArgumentException() {
+    Assertions.assertThrows(
+        IllegalArgumentException.class,
+        () -> {
+          final int pageSize = -1;
+          final long pageIndex = 2;
 
-    PagingRequest request = new PagingRequest();
-    request.setPageSize(pageSize);
-    request.setPageIndex(pageIndex);
-    request.setCountable(false);
+          PagingRequest request = new PagingRequest();
+          request.setPageSize(pageSize);
+          request.setPageIndex(pageIndex);
+        });
 
-    assertThat(request.getPageSize()).isEqualTo(0);
-    assertThat(request.getPageIndex()).isEqualTo(0);
-    assertThat(request.isCountable()).isFalse();
+    Assertions.assertThrows(
+        IllegalArgumentException.class,
+        () -> {
+          final int pageSize = 10;
+          final long pageIndex = -2;
+
+          PagingRequest request = new PagingRequest();
+          request.setPageSize(pageSize);
+          request.setPageIndex(pageIndex);
+        });
   }
 }

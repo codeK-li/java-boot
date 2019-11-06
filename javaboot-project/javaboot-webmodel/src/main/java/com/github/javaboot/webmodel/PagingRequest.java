@@ -21,11 +21,21 @@ public class PagingRequest<T> {
   @Setter @Getter private boolean countable = true;
 
   public void setPageSize(int pageSize) {
-    this.pageSize = pageSize < 0 ? 0 : pageSize;
+    if (pageSize <= 0) {
+      throw new IllegalArgumentException(
+          "pageSize must be greater than 0, it is [" + pageSize + "] now.");
+    }
+
+    this.pageSize = pageSize;
   }
 
   public void setPageIndex(long pageIndex) {
-    this.pageIndex = pageIndex < 0 ? 0 : pageIndex;
+    if (pageIndex <= 0) {
+      throw new IllegalArgumentException(
+          "pageIndex must be greater than 0, it is [" + pageIndex + "] now.");
+    }
+
+    this.pageIndex = pageIndex;
   }
 
   public long getPageNumber() {

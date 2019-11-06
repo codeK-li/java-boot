@@ -25,6 +25,15 @@ public class PagingBody<T> {
    * @param pageSize
    */
   public void setPageCountByTotalCountAndPageSize(long totalCount, long pageSize) {
+    if (totalCount < 0) {
+      throw new IllegalArgumentException(
+          "totalCount must be greater than or equals 0, it is [" + totalCount + "] now.");
+    }
+    if (pageSize < 1) {
+      throw new IllegalArgumentException(
+          "pageSize must be greater than 0, it is [" + pageSize + "] now.");
+    }
+
     this.totalCount = totalCount;
     this.pageCount = ((totalCount - 1) / pageSize) + 1;
   }

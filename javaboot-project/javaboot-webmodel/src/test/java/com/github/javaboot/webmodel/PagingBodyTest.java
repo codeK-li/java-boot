@@ -1,5 +1,6 @@
 package com.github.javaboot.webmodel;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -22,5 +23,26 @@ class PagingBodyTest {
 
     assertThat(pb.getTotalCount()).isEqualTo(totalCount);
     assertThat(pb.getPageCount()).isEqualTo((totalCount - 1) / pageSize + 1);
+  }
+
+  @Test
+  void should_throws_IllegalArgumentException_when_setPageCountByTotalCountAndPageSize() {
+    Assertions.assertThrows(
+        IllegalArgumentException.class,
+        () -> {
+          final long pageSize = 0;
+          final long totalCount = 100;
+          PagingBody<String> pb = new PagingBody<>();
+          pb.setPageCountByTotalCountAndPageSize(totalCount, pageSize);
+        });
+
+    Assertions.assertThrows(
+        IllegalArgumentException.class,
+        () -> {
+          final long pageSize = 10;
+          final long totalCount = -1;
+          PagingBody<String> pb = new PagingBody<>();
+          pb.setPageCountByTotalCountAndPageSize(totalCount, pageSize);
+        });
   }
 }
