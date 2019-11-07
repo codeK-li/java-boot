@@ -3,7 +3,7 @@ package com.github.javaboot.webmodel;
 import lombok.Data;
 
 /**
- * 错误消息
+ * 错误消息对象
  *
  * @author OPO
  * @date 2019-10-24 17:34
@@ -14,7 +14,7 @@ public class ErrorMessage {
   public static final int UNKNOWN_ERROR_CODE = 0;
   /** 错误Code */
   private int code = UNKNOWN_ERROR_CODE;
-  /** 错误消息 */
+  /** 错误Message */
   private String message;
   /** 错误数据 */
   private Object payload;

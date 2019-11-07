@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.List;
 
 /**
- * 用于分页的 Body
+ * 分页请求返回的 Body
  *
  * @author OPO
  */
