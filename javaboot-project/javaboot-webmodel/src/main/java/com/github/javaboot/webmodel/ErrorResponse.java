@@ -8,13 +8,10 @@ package com.github.javaboot.webmodel;
  */
 public class ErrorResponse extends AbstractResponse<ErrorMessage> {
   public ErrorResponse() {
-    super();
-    this.success = false;
-    this.body = new ErrorMessage();
+    this(new ErrorMessage());
   }
 
   public ErrorResponse(ErrorMessage errorMessage) {
-    this();
-    this.body = errorMessage;
+    this.error = errorMessage == null ? new ErrorMessage() : errorMessage;
   }
 }

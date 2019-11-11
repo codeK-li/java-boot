@@ -9,7 +9,7 @@ class ErrorResponseTest {
   void should_return_error_response() {
     ErrorResponse er = new ErrorResponse();
     assertThat(er.isSuccess()).isFalse();
-    ErrorMessage em = er.getBody();
+    ErrorMessage em = er.getError();
     assertThat(em.getCode()).isEqualTo(0);
     assertThat(em.getMessage()).isNull();
     assertThat(em.getPayload()).isNull();
@@ -20,6 +20,6 @@ class ErrorResponseTest {
     ErrorMessage em = new ErrorMessage();
     ErrorResponse er = new ErrorResponse(em);
     assertThat(er.isSuccess()).isFalse();
-    assertThat(er.getBody()).isEqualTo(em);
+    assertThat(er.getError()).isEqualTo(em);
   }
 }

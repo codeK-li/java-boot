@@ -7,12 +7,11 @@ package com.github.javaboot.webmodel;
  */
 public class OkResponse<T> extends AbstractResponse<T> {
   public OkResponse() {
-    super();
-    this.success = true;
+    this(null);
   }
 
   public OkResponse(T body) {
-    this();
+    super();
     this.body = body;
   }
 }
