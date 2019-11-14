@@ -1,4 +1,4 @@
-package com.github.javaboot.webmodel;
+package com.github.javaboot.dto;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

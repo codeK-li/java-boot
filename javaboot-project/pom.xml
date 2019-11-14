@@ -17,7 +17,7 @@
     <module>javaboot-parent</module>
     <module>spring-javaboot-parent</module>
     <module>springboot-starters</module>
-    <module>javaboot-webmodel</module>
+    <module>javaboot-dto</module>
   </modules>
 
 </project>
