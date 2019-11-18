@@ -1,4 +1,4 @@
-package com.github.javaboot.dto;
+package com.github.javaboot.err;
 
 import lombok.Data;
 

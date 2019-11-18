@@ -1,5 +1,6 @@
 package com.github.javaboot.dto;
 
+import com.github.javaboot.err.ErrorMessage;
 import lombok.Data;
 
 /**

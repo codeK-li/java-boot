@@ -13,4 +13,11 @@
     <artifactId>javaboot-dto</artifactId>
     <version>${revision}</version>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.github.javaboot</groupId>
+            <artifactId>javaboot-err</artifactId>
+            <version>${revision}</version>
+        </dependency>
+    </dependencies>
 </project>

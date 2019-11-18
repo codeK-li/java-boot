@@ -1,5 +1,6 @@
 package com.github.javaboot.dto;
 
+import com.github.javaboot.err.ErrorMessage;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
