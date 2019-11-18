@@ -18,4 +18,13 @@ public class ErrorMessage {
   private String message;
   /** 错误数据 */
   private Object payload;
+
+  /**
+   * 转换为 Exception 的 message
+   *
+   * @return
+   */
+  public String toExceptionMessage() {
+    return String.format("[%s]%s", code, message);
+  }
 }
