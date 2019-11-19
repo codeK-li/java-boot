@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class ErrorMessageTest {
   @Test
   void should_return_ErrorMessage() {
-    final int code = 100;
+    final String code = "100";
     final String message = "xxrjrjrj";
     final String payload = "xlsurjrj";
 

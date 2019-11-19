@@ -11,7 +11,7 @@ class ResponseTest {
     Response er = Response.error();
     assertThat(er.isSuccess()).isFalse();
     ErrorMessage em = er.getError();
-    assertThat(em.getCode()).isEqualTo(0);
+    assertThat(em.getCode()).isEqualTo("UNKNOWN");
     assertThat(em.getMessage()).isNull();
     assertThat(em.getPayload()).isNull();
   }

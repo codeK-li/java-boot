@@ -10,10 +10,8 @@ import lombok.Data;
  */
 @Data
 public class ErrorMessage {
-  /** 未知错误Code */
-  public static final int UNKNOWN_ERROR_CODE = 0;
   /** 错误Code */
-  private int code = UNKNOWN_ERROR_CODE;
+  private String code = "UNKNOWN";
   /** 错误Message */
   private String message;
   /** 错误数据 */
