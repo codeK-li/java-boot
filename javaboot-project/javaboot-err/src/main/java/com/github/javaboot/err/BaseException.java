@@ -19,4 +19,11 @@ public abstract class BaseException extends RuntimeException {
     super(errorMessage.toExceptionMessage(), cause);
     this.errorMessage = errorMessage;
   }
+
+  /**
+   * 获取 ErrorLevel
+   *
+   * @return
+   */
+  public abstract int getExceptionLevel();
 }

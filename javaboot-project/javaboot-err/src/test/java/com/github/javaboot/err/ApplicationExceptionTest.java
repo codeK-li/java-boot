@@ -11,6 +11,7 @@ class ApplicationExceptionTest {
     ApplicationException ae = new ApplicationException(em);
 
     assertThat(ae.getErrorMessage()).isEqualTo(em);
+    assertThat(ae.getExceptionLevel()).isEqualTo(ApplicationException.EXCEPTION_LEVEL);
   }
 
   @Test
@@ -21,5 +22,6 @@ class ApplicationExceptionTest {
 
     assertThat(ae.getErrorMessage()).isEqualTo(em);
     assertThat(ae.getCause()).isEqualTo(t);
+    assertThat(ae.getExceptionLevel()).isEqualTo(ApplicationException.EXCEPTION_LEVEL);
   }
 }
