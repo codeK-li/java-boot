@@ -1,7 +1,7 @@
 package com.github.javaboot.err;
 
 /**
- * 应用的基础异常类
+ * 基础设施的异常，例如网络、中间件、外部服务等
  *
  * @author OPO
  */

@@ -1,7 +1,7 @@
 package com.github.javaboot.err;
 
 /**
- * 应用的基础异常类
+ * JavaBoot 框架的异常
  *
  * @author OPO
  */
