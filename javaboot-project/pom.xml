@@ -19,6 +19,7 @@
         <module>springboot-starters</module>
         <module>javaboot-dto</module>
         <module>javaboot-err</module>
+        <module>javaboot-eql</module>
     </modules>
 
 </project>
