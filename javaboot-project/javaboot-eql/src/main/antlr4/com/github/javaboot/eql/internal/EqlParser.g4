@@ -30,10 +30,6 @@ fromClause
 	;
 
 fromClauseSpace
-	: pathRoot
-	;
-
-pathRoot
 	: entityName (identificationVariableDef)?
 	;
 

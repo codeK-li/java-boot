@@ -18,6 +18,11 @@
             <groupId>org.antlr</groupId>
             <artifactId>antlr4-runtime</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -36,6 +41,7 @@
                 </executions>
                 <configuration>
                     <visitor>true</visitor>
+                    <listener>false</listener>
                 </configuration>
             </plugin>
         </plugins>
