@@ -2,9 +2,9 @@ package com.github.javaboot.eql;
 
 import com.github.javaboot.eql.internal.EqlParser;
 import com.github.javaboot.eql.internal.EqlParserBaseVisitor;
-import com.github.javaboot.eql.statement.OrderByClause;
-import com.github.javaboot.eql.statement.SortOrder;
-import com.github.javaboot.eql.statement.SortSpecification;
+import com.github.javaboot.eql.clause.OrderByClause;
+import com.github.javaboot.eql.clause.SortOrder;
+import com.github.javaboot.eql.clause.SortSpecification;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
 import java.util.ArrayList;

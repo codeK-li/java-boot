@@ -1,6 +1,6 @@
 package com.github.javaboot.eql;
 
-import com.github.javaboot.eql.statement.OrderByClause;
+import com.github.javaboot.eql.clause.OrderByClause;
 import lombok.Getter;
 import lombok.Setter;
 

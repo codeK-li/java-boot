@@ -1,4 +1,4 @@
-package com.github.javaboot.eql.statement;
+package com.github.javaboot.eql.clause;
 
 import lombok.Getter;
 import lombok.Setter;

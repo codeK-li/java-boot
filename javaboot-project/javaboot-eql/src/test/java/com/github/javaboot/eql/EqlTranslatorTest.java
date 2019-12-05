@@ -1,8 +1,8 @@
 package com.github.javaboot.eql;
 
-import com.github.javaboot.eql.statement.OrderByClause;
-import com.github.javaboot.eql.statement.SortOrder;
-import com.github.javaboot.eql.statement.SortSpecification;
+import com.github.javaboot.eql.clause.OrderByClause;
+import com.github.javaboot.eql.clause.SortOrder;
+import com.github.javaboot.eql.clause.SortSpecification;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -14,8 +14,6 @@ class EqlTranslatorTest {
    * eql:
    *
    * <p>from employee
-   *
-   * <p>
    */
   @Test
   void should_translator_entityName() {
@@ -57,5 +55,21 @@ class EqlTranslatorTest {
       assertThat(sortSpecification.getField()).isEqualTo("age");
       assertThat(sortSpecification.getSortOrder()).isEqualTo(SortOrder.ASC);
     }
+  }
+
+  /**
+   * eql:
+   *
+   * <p>from employee where age > 10
+   */
+  @Test
+  void should_translator_age_gt_10() {
+    String eql = "from employee where age > 10";
+    EqlTranslator translator = new EqlTranslator();
+    EqlStatement statement = translator.translate(eql);
+    String entityName = statement.getEntityName();
+    assertThat(entityName).isEqualTo("employee");
+
+
   }
 }

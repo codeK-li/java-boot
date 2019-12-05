@@ -117,8 +117,7 @@ inList
 // Expression
 
 expression
-	: expression DOUBLE_PIPE expression			# ConcatenationExpression
-	| expression PLUS expression				# AdditionExpression
+	: expression PLUS expression				# AdditionExpression
 	| expression MINUS expression				# SubtractionExpression
 	| expression ASTERISK expression			# MultiplicationExpression
 	| expression SLASH expression				# DivisionExpression
