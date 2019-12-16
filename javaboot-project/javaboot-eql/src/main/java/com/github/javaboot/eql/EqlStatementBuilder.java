@@ -1,10 +1,10 @@
 package com.github.javaboot.eql;
 
-import com.github.javaboot.eql.internal.EqlParser;
-import com.github.javaboot.eql.internal.EqlParserBaseVisitor;
 import com.github.javaboot.eql.clause.OrderByClause;
 import com.github.javaboot.eql.clause.SortOrder;
 import com.github.javaboot.eql.clause.SortSpecification;
+import com.github.javaboot.eql.internal.EqlParser;
+import com.github.javaboot.eql.internal.EqlParserBaseVisitor;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
 import java.util.ArrayList;
@@ -25,35 +25,45 @@ public class EqlStatementBuilder extends EqlParserBaseVisitor {
       EqlStatement eqlStatement = new EqlStatement();
       eqlStatement.setEntityName(entityName);
 
-      EqlParser.OrderByClauseContext orderByClauseContext = querySpecContext.orderByClause();
-      if (orderByClauseContext != null) {
-        List<EqlParser.SortSpecificationContext> sortSpecificationContexts =
-            orderByClauseContext.sortSpecification();
-        List<SortSpecification> sortSpecifications =
-            new ArrayList<>(sortSpecificationContexts.size());
-        for (EqlParser.SortSpecificationContext ssc : sortSpecificationContexts) {
-          SortSpecification ss = new SortSpecification();
-          String field = ssc.sortExpression().IDENTIFIER().getText();
-          ss.setField(field);
-          EqlParser.OrderingSpecificationContext orderingSpecificationContext =
-              ssc.orderingSpecification();
-          if (orderingSpecificationContext != null) {
-            String sortOrder = orderingSpecificationContext.getText();
-            ss.setSortOrder(SortOrder.interpret(sortOrder));
-          }
+      buildOrderByClause(querySpecContext, eqlStatement);
 
-          sortSpecifications.add(ss);
-        }
-
-        OrderByClause orderByClause = new OrderByClause();
-        orderByClause.setSortSpecifications(sortSpecifications);
-        eqlStatement.setOrderByClause(orderByClause);
-      }
-
+      super.visitStatement(ctx);
       return eqlStatement;
     }
 
-    // return super.visitStatement(ctx);
     return null;
+  }
+
+  @Override
+  public Object visitOrderByClause(EqlParser.OrderByClauseContext ctx) {
+    return super.visitOrderByClause(ctx);
+  }
+
+  private void buildOrderByClause(
+      EqlParser.QuerySpecContext querySpecContext, EqlStatement eqlStatement) {
+    EqlParser.OrderByClauseContext orderByClauseContext = querySpecContext.orderByClause();
+    if (orderByClauseContext != null) {
+      List<EqlParser.SortSpecificationContext> sortSpecificationContexts =
+          orderByClauseContext.sortSpecification();
+      List<SortSpecification> sortSpecifications =
+          new ArrayList<>(sortSpecificationContexts.size());
+      for (EqlParser.SortSpecificationContext ssc : sortSpecificationContexts) {
+        SortSpecification ss = new SortSpecification();
+        String column = ssc.sortExpression().IDENTIFIER().getText();
+        ss.setColumn(column);
+        EqlParser.OrderingSpecificationContext orderingSpecificationContext =
+            ssc.orderingSpecification();
+        if (orderingSpecificationContext != null) {
+          String sortOrder = orderingSpecificationContext.getText();
+          ss.setSortOrder(SortOrder.interpret(sortOrder));
+        }
+
+        sortSpecifications.add(ss);
+      }
+
+      OrderByClause orderByClause = new OrderByClause();
+      orderByClause.setSortSpecifications(sortSpecifications);
+      eqlStatement.setOrderByClause(orderByClause);
+    }
   }
 }

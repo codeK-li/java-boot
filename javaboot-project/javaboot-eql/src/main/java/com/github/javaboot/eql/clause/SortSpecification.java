@@ -6,6 +6,6 @@ import lombok.Setter;
 @Setter
 @Getter
 public class SortSpecification {
-  private String field;
+  private String column;
   private SortOrder sortOrder = SortOrder.ASC;
 }

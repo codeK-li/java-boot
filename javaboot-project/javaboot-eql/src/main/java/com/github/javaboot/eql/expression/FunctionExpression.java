@@ -1,4 +1,4 @@
-package com.github.javaboot.eql.clause;
+package com.github.javaboot.eql.expression;
 
 import java.util.List;
 
