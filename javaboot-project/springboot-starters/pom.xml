@@ -6,6 +6,7 @@
     <artifactId>spring-javaboot-parent</artifactId>
     <groupId>com.github.javaboot</groupId>
     <version>${revision}</version>
+    <relativePath>../spring-javaboot-parent</relativePath>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 

@@ -6,6 +6,7 @@
     <artifactId>springboot-starters</artifactId>
     <groupId>com.github.javaboot</groupId>
     <version>${revision}</version>
+    <relativePath>..</relativePath>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
