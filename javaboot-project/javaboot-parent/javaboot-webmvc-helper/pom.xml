@@ -4,18 +4,19 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>com.github.codek.javaboot</groupId>
-        <artifactId>javaboot-build</artifactId>
+        <artifactId>javaboot-parent</artifactId>
         <version>${revision}</version>
     </parent>
-
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>javaboot-project</artifactId>
+
+    <artifactId>javaboot-webmvc-helper</artifactId>
     <version>${revision}</version>
-    <packaging>pom</packaging>
 
-    <modules>
-        <module>javaboot-dependencies</module>
-        <module>javaboot-parent</module>
-    </modules>
-
+    <dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 </project>

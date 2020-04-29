@@ -1,34 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns="http://maven.apache.org/POM/4.0.0"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-  <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.github.javaboot</groupId>
-  <artifactId>javaboot-build</artifactId>
-  <packaging>pom</packaging>
-  <version>${revision}</version>
+    <groupId>com.github.codek.javaboot</groupId>
+    <artifactId>javaboot-build</artifactId>
+    <version>${revision}</version>
+    <packaging>pom</packaging>
 
-  <scm>
-    <url>https://github.com/codeK-li/java-boot.git</url>
-  </scm>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <revision>0.1.0.BUILD-SNAPSHOT</revision>
 
-  <url>https://github.com/codeK-li/java-boot</url>
+        <jacoco.maven.plugin.version>0.8.5</jacoco.maven.plugin.version>
+        <maven.source.plugin.version>3.2.1</maven.source.plugin.version>
+        <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
+        <maven.surefire.plugin.version>2.22.2</maven.surefire.plugin.version>
+    </properties>
 
-  <developers>
-    <developer>
-      <id>codeK-li</id>
-      <name>李伟超</name>
-      <email>codek_mk@163.com</email>
-    </developer>
-  </developers>
+    <scm>
+        <url>https://github.com/codeK-li/java-boot.git</url>
+    </scm>
 
-  <properties>
-    <revision>0.1.0.BUILD-SNAPSHOT</revision>
-  </properties>
+    <url>https://github.com/codeK-li/java-boot</url>
 
-  <modules>
-    <module>javaboot-project</module>
-  </modules>
+    <developers>
+        <developer>
+            <id>codeK-li</id>
+            <name>李伟超</name>
+            <email>codek_mk@163.com</email>
+        </developer>
+    </developers>
+
+    <modules>
+        <module>javaboot-project</module>
+        <module>springboot-project</module>
+    </modules>
+
+    <build>
+        <plugins>
+            <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-source-plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${maven.source.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- https://maven.apache.org/plugins/maven-compiler-plugin/index.html -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.plugin.version}</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <!--https://maven.apache.org/surefire/maven-surefire-plugin-->
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven.surefire.plugin.version}</version>
+            </plugin>
+
+            <!--https://www.eclemma.org/jacoco/trunk/doc/maven.html-->
+            <!--https://www.eclemma.org/jacoco/trunk/doc/check-mojo.html-->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco.maven.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>post-unit-test</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>default-check</id>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <phase>verify</phase>
+                        <configuration>
+                            <rules>
+                                <rule implementation="org.jacoco.maven.RuleConfiguration">
+                                    <element>BUNDLE</element>
+                                    <limits>
+                                        <limit implementation="org.jacoco.report.check.Limit">
+                                            <counter>INSTRUCTION</counter>
+                                            <value>COVEREDRATIO</value>
+                                            <minimum>0.90</minimum>
+                                        </limit>
+                                    </limits>
+                                </rule>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <excludes>
+                        <exclude>**/generated/**/*</exclude>
+                        <exclude>**/external/**/*</exclude>
+                        <exclude>**/*Configuration.class</exclude>
+                        <exclude>**/*Properties.class</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

@@ -1,57 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns="http://maven.apache.org/POM/4.0.0"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <parent>
-    <artifactId>javaboot-project</artifactId>
-    <groupId>com.github.javaboot</groupId>
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.github.codek.javaboot</groupId>
+        <artifactId>javaboot-project</artifactId>
+        <version>${revision}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>javaboot-dependencies</artifactId>
     <version>${revision}</version>
-  </parent>
-  <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
 
-  <artifactId>javaboot-dependencies</artifactId>
-  <packaging>pom</packaging>
+    <properties>
+        <lombok.version>1.18.10</lombok.version>
+        <guava.version>28.1-jre</guava.version>
+        <javax.servlet.version>4.0.1</javax.servlet.version>
 
-  <properties>
-    <lombok.version>1.18.10</lombok.version>
-    <guava.version>28.1-jre</guava.version>
-    <antlr4.version>4.7.2</antlr4.version>
+        <!-- Test -->
+        <junit5.version>5.6.2</junit5.version>
+        <assertj.version>3.15.0</assertj.version>
+        <mockito.version>3.3.3</mockito.version>
+    </properties>
 
-    <!-- Test -->
-    <junit5.version>5.3.2</junit5.version>
-    <assertj.version>3.11.1</assertj.version>
-    <mockito.version>3.1.0</mockito.version>
-  </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
 
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-dependencies</artifactId>
-        <version>2.2.6.RELEASE</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
 
-      <dependency>
-        <groupId>com.google.guava</groupId>
-        <artifactId>guava</artifactId>
-        <version>${guava.version}</version>
-      </dependency>
-
-      <dependency>
-        <groupId>org.projectlombok</groupId>
-        <artifactId>lombok</artifactId>
-        <version>${lombok.version}</version>
-        <scope>provided</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>org.antlr</groupId>
-        <artifactId>antlr4-runtime</artifactId>
-        <version>${antlr4.version}</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${javax.servlet.version}</version>
+                <scope>provided</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>
