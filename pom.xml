@@ -5,8 +5,8 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.codek.javaboot</groupId>
-    <artifactId>javaboot-build</artifactId>
+    <groupId>com.github.codek.jrock</groupId>
+    <artifactId>jrock-build</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
 
@@ -35,7 +35,7 @@
     </developers>
 
     <modules>
-        <module>javaboot-project</module>
+        <module>java-project</module>
         <module>springboot-project</module>
     </modules>
 

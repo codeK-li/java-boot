@@ -3,19 +3,19 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>com.github.codek.javaboot</groupId>
-        <artifactId>javaboot-build</artifactId>
+        <groupId>com.github.codek.jrock</groupId>
+        <artifactId>jrock-build</artifactId>
         <version>${revision}</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>javaboot-project</artifactId>
+    <artifactId>java-project</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>javaboot-dependencies</module>
-        <module>javaboot-parent</module>
+        <module>java-dependencies</module>
+        <module>java-parent</module>
     </modules>
 
 </project>

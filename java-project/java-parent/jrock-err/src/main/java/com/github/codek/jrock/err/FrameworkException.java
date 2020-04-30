@@ -1,7 +1,7 @@
 package com.github.codek.jrock.err;
 
 /**
- * JavaBoot 框架的异常
+ * jrock 框架的异常
  *
  * @author OPO
  */
