@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * 分页请求返回的 Body
  *
- * @author OPO
+ * @author codeK
  */
 @Data
 public class PagingBody<T> {
@@ -21,8 +21,8 @@ public class PagingBody<T> {
   /**
    * 通过 totalCount 和 pageSize 计算 pageCount
    *
-   * @param totalCount
-   * @param pageSize
+   * @param totalCount 记录总数
+   * @param pageSize 每一页的记录数
    */
   public void setPageCountByTotalCountAndPageSize(long totalCount, long pageSize) {
     if (totalCount < 0) {

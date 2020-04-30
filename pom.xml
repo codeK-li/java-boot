@@ -10,6 +10,10 @@
     <version>${revision}</version>
     <packaging>pom</packaging>
 
+    <name>jrock-framework</name>
+    <url>https://github.com/codeK-li/java-boot</url>
+    <description>A Java Framework</description>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <revision>0.1.0.BUILD-SNAPSHOT</revision>
@@ -20,11 +24,17 @@
         <maven.surefire.plugin.version>2.22.2</maven.surefire.plugin.version>
     </properties>
 
-    <scm>
-        <url>https://github.com/codeK-li/java-boot.git</url>
-    </scm>
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
 
-    <url>https://github.com/codeK-li/java-boot</url>
+    <scm>
+        <url>https://github.com/codeK-li/java-boot</url>
+        <connection>https://github.com/codeK-li/java-boot.git</connection>
+    </scm>
 
     <developers>
         <developer>
@@ -65,6 +75,27 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <!-- https://maven.apache.org/plugins/maven-javadoc-plugin/ -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <charset>UTF-8</charset>
+                    <docencoding>UTF-8</docencoding>
                 </configuration>
             </plugin>
 

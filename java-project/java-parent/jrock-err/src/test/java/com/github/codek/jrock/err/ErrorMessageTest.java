@@ -19,6 +19,6 @@ class ErrorMessageTest {
     assertThat(em.getCode()).isEqualTo(code);
     assertThat(em.getMessage()).isEqualTo(message);
     assertThat(em.getPayload()).isEqualTo(payload);
-    assertThat(em.toExceptionMessage()).isEqualTo(String.format("[%s]%s", code, message));
+    assertThat(em.toMessage()).isEqualTo(String.format("[%s]%s", code, message));
   }
 }

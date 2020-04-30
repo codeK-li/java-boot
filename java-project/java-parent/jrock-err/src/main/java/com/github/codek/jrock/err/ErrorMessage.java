@@ -5,8 +5,8 @@ import lombok.Data;
 /**
  * 错误消息对象
  *
- * @author OPO
- * @date 2019-10-24 17:34
+ * @author codeK
+ * @since 2019-10-24 17:34
  */
 @Data
 public class ErrorMessage {
@@ -20,9 +20,9 @@ public class ErrorMessage {
   /**
    * 转换为 Exception 的 message
    *
-   * @return
+   * @return message 的字符串
    */
-  public String toExceptionMessage() {
+  public String toMessage() {
     return String.format("[%s]%s", code, message);
   }
 }

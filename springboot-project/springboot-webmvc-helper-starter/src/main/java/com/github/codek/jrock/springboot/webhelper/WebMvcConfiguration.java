@@ -14,7 +14,7 @@ import org.springframework.web.servlet.DispatcherServlet;
 /**
  * WebMvc 模块的启动项
  *
- * @author liweichao11
+ * @author codeK
  * @since 2018/3/16
  */
 @ConditionalOnClass(DispatcherServlet.class)

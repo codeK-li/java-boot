@@ -3,7 +3,7 @@ package com.github.codek.jrock.err;
 /**
  * jrock 框架的异常
  *
- * @author OPO
+ * @author codeK
  */
 public class FrameworkException extends BaseException {
   /** 基础设施的异常等级，例如网络、中间件、外部服务等 */
@@ -17,10 +17,21 @@ public class FrameworkException extends BaseException {
   /** 异常等级 */
   private int exceptionLevel;
 
+  /**
+   * 构造函数
+   *
+   * @param errorMessage 错误消息
+   */
   protected FrameworkException(ErrorMessage errorMessage) {
     super(errorMessage);
   }
 
+  /**
+   * 构造函数
+   *
+   * @param errorMessage 错误消息
+   * @param cause 异常
+   */
   protected FrameworkException(ErrorMessage errorMessage, Throwable cause) {
     super(errorMessage, cause);
   }
@@ -28,8 +39,8 @@ public class FrameworkException extends BaseException {
   /**
    * 构造基础设施异常
    *
-   * @param errorMessage
-   * @return
+   * @param errorMessage 错误消息
+   * @return 框架异常
    */
   public static FrameworkException system(ErrorMessage errorMessage) {
     FrameworkException e = new FrameworkException(errorMessage);
@@ -41,9 +52,9 @@ public class FrameworkException extends BaseException {
   /**
    * 构造基础设施异常
    *
-   * @param errorMessage
-   * @param cause
-   * @return
+   * @param errorMessage 错误消息
+   * @param cause 异常
+   * @return 框架异常
    */
   public static FrameworkException system(ErrorMessage errorMessage, Throwable cause) {
     FrameworkException e = new FrameworkException(errorMessage, cause);
@@ -55,8 +66,8 @@ public class FrameworkException extends BaseException {
   /**
    * 构造开发框架异常
    *
-   * @param errorMessage
-   * @return
+   * @param errorMessage 错误消息
+   * @return 框架异常
    */
   public static FrameworkException framework(ErrorMessage errorMessage) {
     FrameworkException e = new FrameworkException(errorMessage);
@@ -68,9 +79,9 @@ public class FrameworkException extends BaseException {
   /**
    * 构造开发框架异常
    *
-   * @param errorMessage
-   * @param cause
-   * @return
+   * @param errorMessage 错误消息
+   * @param cause 异常
+   * @return 框架异常
    */
   public static FrameworkException framework(ErrorMessage errorMessage, Throwable cause) {
     FrameworkException e = new FrameworkException(errorMessage, cause);
@@ -82,8 +93,8 @@ public class FrameworkException extends BaseException {
   /**
    * 构造应用框架异常
    *
-   * @param errorMessage
-   * @return
+   * @param errorMessage 错误消息
+   * @return 框架异常
    */
   public static FrameworkException application(ErrorMessage errorMessage) {
     FrameworkException e = new FrameworkException(errorMessage);
@@ -95,9 +106,9 @@ public class FrameworkException extends BaseException {
   /**
    * 构造应用框架异常
    *
-   * @param errorMessage
-   * @param cause
-   * @return
+   * @param errorMessage 错误消息
+   * @param cause 异常
+   * @return 框架异常
    */
   public static FrameworkException application(ErrorMessage errorMessage, Throwable cause) {
     FrameworkException e = new FrameworkException(errorMessage, cause);
@@ -109,8 +120,8 @@ public class FrameworkException extends BaseException {
   /**
    * 构造业务规则异常
    *
-   * @param errorMessage
-   * @return
+   * @param errorMessage 错误消息
+   * @return 框架异常
    */
   public static FrameworkException business(ErrorMessage errorMessage) {
     FrameworkException e = new FrameworkException(errorMessage);
@@ -122,8 +133,9 @@ public class FrameworkException extends BaseException {
   /**
    * 构造业务规则异常
    *
-   * @param errorMessage
-   * @return
+   * @param errorMessage 错误消息
+   * @param cause 异常
+   * @return 框架异常
    */
   public static FrameworkException business(ErrorMessage errorMessage, Throwable cause) {
     FrameworkException e = new FrameworkException(errorMessage, cause);

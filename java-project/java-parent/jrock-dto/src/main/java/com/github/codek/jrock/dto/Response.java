@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * Response 对象，可以被使用在 web 场景，也可以被使用在 RPC 场景
  *
- * @author OPO
+ * @author codeK
  */
 @Data
 public class Response<T> {
