@@ -1,6 +1,6 @@
-package com.github.codek.springboot.webhelper;
+package com.github.codek.jrock.springboot.webhelper;
 
-import com.github.codek.javaboot.webhelper.WebMvcHelper;
+import com.github.codek.jrock.webhelper.WebMvcHelper;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;

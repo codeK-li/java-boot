@@ -1,4 +1,4 @@
-package com.github.codek.javaboot.err;
+package com.github.codek.jrock.err;
 
 import lombok.Getter;
 

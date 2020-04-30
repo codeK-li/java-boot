@@ -1,6 +1,6 @@
-package com.github.codek.javaboot.dto;
+package com.github.codek.jrock.dto;
 
-import com.github.codek.javaboot.err.ErrorMessage;
+import com.github.codek.jrock.err.ErrorMessage;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

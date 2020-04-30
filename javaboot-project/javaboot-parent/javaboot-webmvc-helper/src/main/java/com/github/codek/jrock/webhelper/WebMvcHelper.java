@@ -1,4 +1,4 @@
-package com.github.codek.javaboot.webhelper;
+package com.github.codek.jrock.webhelper;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;

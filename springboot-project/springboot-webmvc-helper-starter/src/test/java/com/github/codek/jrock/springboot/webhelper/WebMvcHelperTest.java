@@ -1,6 +1,6 @@
-package com.github.codek.springboot.webhelper;
+package com.github.codek.jrock.springboot.webhelper;
 
-import com.github.codek.javaboot.webhelper.WebMvcHelper;
+import com.github.codek.jrock.webhelper.WebMvcHelper;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

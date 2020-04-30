@@ -1,4 +1,4 @@
-package com.github.codek.javaboot.dto;
+package com.github.codek.jrock.dto;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

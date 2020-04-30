@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.github.codek.springboot.webhelper.WebMvcConfiguration
+  com.github.codek.jrock.springboot.webhelper.WebMvcConfiguration
