@@ -3,7 +3,7 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>com.github.codek.jrock</groupId>
+        <groupId>io.github.codek-li.jrock</groupId>
         <artifactId>java-dependencies</artifactId>
         <version>${revision}</version>
         <relativePath>../java-dependencies</relativePath>
