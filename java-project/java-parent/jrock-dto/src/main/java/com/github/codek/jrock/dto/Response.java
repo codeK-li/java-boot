@@ -26,7 +26,7 @@ public class Response<T> {
   /**
    * 构造包含错误信息的 Response 对象
    *
-   * @return
+   * @return 包含错误信息的 Response 对象
    */
   public static <T> Response<T> error() {
     return error(null);
@@ -35,8 +35,8 @@ public class Response<T> {
   /**
    * 构造包含错误信息的 Response 对象
    *
-   * @param em
-   * @return
+   * @param em 错误消息对象
+   * @return 包含错误信息的 Response 对象
    */
   public static <T> Response<T> error(ErrorMessage em) {
     if (em == null) {
@@ -51,8 +51,8 @@ public class Response<T> {
   /**
    * 构造成功的 Response
    *
-   * @param <T>
-   * @return
+   * @param <T> 消息体类型
+   * @return 包含空消息体的 Response
    */
   public static <T> Response<T> ok() {
     Response response = new Response();
@@ -62,9 +62,9 @@ public class Response<T> {
   /**
    * 构造成功的 Response
    *
-   * @param body
-   * @param <T>
-   * @return
+   * @param body 消息体
+   * @param <T> 消息体类型
+   * @return 包含空消息体的 Response
    */
   public static <T> Response<T> ok(T body) {
     Response<T> response = new Response<T>();
@@ -75,7 +75,7 @@ public class Response<T> {
   /**
    * 是否是成功的 Response
    *
-   * @return
+   * @return 是否是成功
    */
   public boolean isSuccess() {
     return error == null;
