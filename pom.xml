@@ -16,7 +16,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <revision>0.1.0.BUILD-SNAPSHOT</revision>
+        <revision>1.0.0</revision>
+<!--        <revision>0.1.1.BUILD-SNAPSHOT</revision>-->
 
         <jacoco.maven.plugin.version>0.8.5</jacoco.maven.plugin.version>
         <maven.source.plugin.version>3.2.1</maven.source.plugin.version>
@@ -155,6 +156,20 @@
                         <exclude>**/*Properties.class</exclude>
                     </excludes>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
