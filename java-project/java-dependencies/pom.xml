@@ -15,7 +15,7 @@
 
     <properties>
         <lombok.version>1.18.10</lombok.version>
-        <guava.version>28.1-jre</guava.version>
+        <guava.version>29.0-jre</guava.version>
         <javax.servlet.version>4.0.1</javax.servlet.version>
 
         <!-- Test -->
